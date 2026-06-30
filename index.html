@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калейдоскоп - Рекламная компания</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+@keyframes drift{0%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,15px) scale(0.95)}100%{transform:translate(15px,-30px) scale(1.02)}}
+@keyframes scrollBounce{0%,100%{transform:rotate(45deg) translateY(0);opacity:0.4}50%{transform:rotate(45deg) translateY(6px);opacity:0.8}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-15px) rotate(90deg)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:0.12}50%{transform:scale(1.8);opacity:0.25}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+:root{--clr-bg:#faf8f5;--clr-text:#1a1a1a;--clr-muted:#888;--clr-accent-1:#ff6b35;--clr-accent-2:#ffd23f;--clr-accent-3:#ee4266;--clr-accent-4:#3bceac;--clr-accent-5:#4361ee}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Onest",sans-serif;background:var(--clr-bg);color:var(--clr-text);overflow-x:hidden;min-height:100vh}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;position:relative}
+.hero h1{font-family:"Unbounded",sans-serif;font-size:clamp(2rem,6vw,4.5rem);font-weight:700;line-height:1.1;margin-bottom:1rem}
+.hero p{font-size:1.1rem;color:var(--clr-muted);max-width:500px;margin-bottom:2rem}
+.cta-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.cta-buttons a{padding:0.8rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;transition:transform 0.3s}
+.cta-buttons a:hover{transform:scale(1.05)}
+.btn-primary{background:linear-gradient(135deg,var(--clr-accent-1),var(--clr-accent-5));color:#fff}
+.btn-outline{border:2px solid var(--clr-text);color:var(--clr-text)}
+.section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-family:"Unbounded",sans-serif;font-size:2.5rem;margin-bottom:0.5rem}
+.section-subtitle{color:var(--clr-muted);margin-bottom:3rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.service-card{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,0.05);transition:transform 0.3s}
+.service-card:hover{transform:translateY(-5px)}
+.service-card h3{font-family:"Unbounded",sans-serif;font-size:1.2rem;margin:1rem 0 0.5rem}
+.service-card p{color:var(--clr-muted);font-size:0.9rem;line-height:1.6}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-text h3{font-family:"Unbounded",sans-serif;font-size:1.3rem;margin-bottom:1rem;background:linear-gradient(135deg,var(--clr-accent-5),var(--clr-accent-1));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.about-text p{font-size:1rem;line-height:1.8;color:var(--clr-muted)}
+.stats{display:flex;gap:3rem;margin-top:2rem}
+.stat{text-align:center}
+.stat-num{font-family:"Unbounded",sans-serif;font-size:2rem;font-weight:700;color:var(--clr-accent-5)}
+.stat-label{color:var(--clr-muted);font-size:0.85rem}
+.cta-section{background:linear-gradient(135deg,var(--clr-accent-5),var(--clr-accent-1));color:#fff;padding:5rem 2rem;text-align:center;border-radius:24px;max-width:900px;margin:0 auto}
+.cta-section h2{font-family:"Unbounded",sans-serif;font-size:2rem;margin-bottom:1rem}
+.cta-section a{display:inline-block;padding:0.8rem 2.5rem;background:#fff;color:var(--clr-accent-5);border-radius:50px;text-decoration:none;font-weight:600;margin-top:1rem}
+footer{text-align:center;padding:2rem;color:var(--clr-muted);font-size:0.85rem}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}.stats{flex-direction:column;gap:1.5rem}}
+</style>
+</head>
+<body>
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(10px);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center">
+<div style="font-family:Unbounded,sans-serif;font-weight:700;font-size:1.2rem">Калейдоскоп</div>
+<div class="nav-links" style="display:flex;gap:2rem">
+<a href="#about">О нас</a>
+<a href="#services">Услуги</a>
+<a href="#works">Примеры</a>
+<a href="#reviews">Отзывы</a>
+<a href="#contacts">Контакты</a>
+</div>
+</nav>
+<section class="hero">
+<div style="font-size:4rem;margin-bottom:1rem">🎨</div>
+<h1>Сделай свои идеи<br>цветными!</h1>
+<p>Превращаем ваши замыслы в яркие решения. Дизайн, который запоминается, и технологии, которые работают.</p>
+<div class="cta-buttons">
+<a href="#contacts" class="btn-primary">Обсудить заказ</a>
+<a href="#services" class="btn-outline">Наши услуги</a>
+</div>
+</section>
+<section id="about" class="section">
+<h2>О нас</h2>
+<p class="section-subtitle">Рекламная компания «Калейдоскоп» работает в г. Курск с 2014 года!</p>
+<div class="about-grid">
+<div class="about-text">
+<h3>Ваш надёжный партнёр в рекламе</h3>
+<p>Более 10 лет мы помогаем бизнесу расти через яркий и эффективный реклам. Наша команда — это дизайнеры, маркетологи и технические специалисты, которые знают, как превратить вашу идею в результат.</p>
+<p>Мы работаем с полным циклом: от разработки концепции до монтажа и запуска рекламных конструкций любой сложности.</p>
+<div class="stats">
+<div class="stat"><div class="stat-num">10+</div><div class="stat-label">лет на рынке</div></div>
+<div class="stat"><div class="stat-num">500+</div><div class="stat-label">проектов</div></div>
+<div class="stat"><div class="stat-num">200+</div><div class="stat-label">клиентов</div></div>
+</div>
+</div>
+<div style="background:linear-gradient(135deg,var(--clr-accent-4),var(--clr-accent-5));border-radius:16px;height:300px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:3rem">🗺️</div>
+</div>
+</section>
+<section id="services" class="section">
+<h2>Наши услуги</h2>
+<p class="section-subtitle">Полный цикл рекламных решений — от идеи до реализации</p>
+<div class="services-grid">
+<div class="service-card"><div style="font-size:2.5rem">🏷️</div><h3>Наклейки</h3><p>Виниловые, бумажные, прозрачные. Любой формат и тираж.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">💡</div><h3>Неоновые вывески</h3><p>Неоновая и LED-неоновая наружная и интерьерная подсветка.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">👕</div><h3>Термонаклейки</h3><p>Термоперенос изображений на ткани, сумки, футболки.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">💎</div><h3>Акриловая продукция</h3><p>Стойки, таблички, держатели, декор из акрила.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">🔤</div><h3>Объёмные буквы</h3><p>Металлические, пластиковые, светящиеся буквы для фасадов.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">📄</div><h3>Полиграфия</h3><p>Визитки, буклеты, флаеры, плакаты, каталоги.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">📊</div><h3>Стенды</h3><p>Рекламные стенды, постер-ницы, информационные табло.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">🪧</div><h3>Таблички</h3><p>Адресные, указательные, информационные таблички.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">🎁</div><h3>Сувенирная продукция</h3><p>Нанесение логотипов на кружки, ручки, флешки и подарки.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">🎞️</div><h3>Ролл-апы</h3><p>Переносные roll-up баннеры для выставок и презентаций.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">✂️</div><h3>Х-фреймы</h3><p>Складные Х-образные конструкции с баннером.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">🏢</div><h3>Вывески</h3><p>Фасадные, интерьерные, светящиеся вывески любой формы.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">💡</div><h3>Световые короба</h3><p>Светящиеся панели для вывесок и рекламных конструкций.</p></div>
+<div class="service-card"><div style="font-size:2.5rem">🖼️</div><h3>Холсты</h3><p>Печать на холсте, натяжка на подрамник, эксклюзивный декор.</p></div>
+</div>
+</section>
+<section class="section cta-section" id="contacts">
+<h2>Готовы начать?</h2>
+<p>Расскажите о вашей идее — мы покажем, как превратить её в нечто яркое и настоящее.</p>
+<a href="mailto:hello@example.com">Связаться с нами</a>
+</section>
+<footer>© 2025. Все права защищены.</footer>
+</body>
+</html>
